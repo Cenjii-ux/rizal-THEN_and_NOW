@@ -1,0 +1,541 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #444450;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page {
+    width: min(1100px, 95%);
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 70px;
+}
+
+
+/* =========================
+   CHARACTERS
+========================= */
+
+.characters {
+    width: 430px;
+    height: 400px;
+    position: relative;
+}
+
+.character {
+    position: absolute;
+
+    transition:
+        transform 0.3s ease;
+
+    transform-origin: center bottom;
+}
+
+
+/* Purple */
+
+.green {
+    width: 150px;
+    height: 270px;
+
+    background: #00ff0d;
+
+    left: 90px;
+    bottom: 60px;
+
+    border-radius: 8px 8px 0 0;
+
+    transform: rotate(4deg);
+}
+
+
+/* Black */
+
+.blue {
+    width: 90px;
+    height: 190px;
+
+    background: #2f00ff;
+
+    left: 215px;
+    bottom: 60px;
+
+    border-radius: 5px 5px 0 0;
+}
+
+
+/* Yellow */
+
+.yellow {
+    width: 110px;
+    height: 180px;
+
+    background: #f1dc00;
+
+    left: 275px;
+    bottom: 60px;
+
+    border-radius: 55px 55px 0 0;
+}
+
+
+/* Orange */
+
+.orange {
+    width: 205px;
+    height: 110px;
+
+    background: #ff6828;
+
+    left: 5px;
+    bottom: 60px;
+
+    border-radius: 110px 110px 0 0;
+}
+
+
+/* =========================
+   EYES
+========================= */
+
+.eyes {
+    position: absolute;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 18px;
+}
+
+.eye {
+    width: 9px;
+    height: 12px;
+
+    background: #111;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    --eye-x: 0px;
+    --eye-y: 0px;
+
+    transform:
+        translate(
+            var(--eye-x),
+            var(--eye-y)
+        );
+
+    transition:
+        transform 0.05s linear;
+}
+
+
+/* Purple + Black */
+
+.purple .eye,
+.black .eye {
+    background: white;
+}
+
+.purple .eye::after,
+.black .eye::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 6px;
+
+    background: #111;
+
+    border-radius: 50%;
+
+    left: 3px;
+    top: 3px;
+}
+
+
+/* Orange */
+
+.orange .eyes {
+    top: 35px;
+    gap: 15px;
+}
+
+.orange .eye {
+    background: #111;
+
+    width: 9px;
+    height: 9px;
+}
+
+
+/* Yellow eye */
+
+.yellow .eye {
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    background: #111;
+
+    top: 42px;
+    left: 45px;
+}
+
+
+/* Yellow mouth */
+
+.yellow .mouth {
+    position: absolute;
+
+    width: 28px;
+    height: 5px;
+
+    background: #111;
+
+    top: 63px;
+    left: 55px;
+
+    border-radius: 5px;
+}
+
+
+/* Orange mouth */
+
+.orange .mouth {
+    position: absolute;
+
+    width: 16px;
+    height: 5px;
+
+    background: #111;
+
+    top: 52px;
+    left: 125px;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+    width: 380px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+
+    font-size: 30px;
+
+    color: #151515;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: #888;
+
+    font-size: 13px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.login-card > label {
+    display: block;
+
+    font-size: 13px;
+
+    color: #444;
+
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+input[type="email"],
+.password-box input {
+    width: 100%;
+    height: 45px;
+
+    border: none;
+
+    border-bottom: 1px solid #aaa;
+
+    outline: none;
+
+    font-size: 14px;
+
+    padding: 0 5px;
+}
+
+input:focus {
+    border-bottom: 2px solid #111;
+}
+
+
+/* Password */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 40px;
+}
+
+#togglePassword {
+    position: absolute;
+
+    right: 5px;
+    top: 10px;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 18px 0 25px;
+
+    font-size: 11px;
+}
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.forgot {
+    border: none;
+
+    background: none;
+
+    color: #888;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.login-button,
+.google-button {
+    width: 100%;
+    height: 45px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.login-button {
+    background: #111;
+
+    color: white;
+
+    border: none;
+
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+}
+
+.google-button {
+    margin-top: 15px;
+
+    background: white;
+
+    border: 1px solid #ddd;
+}
+
+.google-button span {
+    font-weight: bold;
+
+    margin-right: 8px;
+}
+
+
+/* =========================
+   SIGN UP
+========================= */
+
+.signup {
+    text-align: center;
+
+    margin-top: 65px;
+
+    font-size: 11px;
+
+    color: #777;
+}
+
+.signup a {
+    color: #111;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   REACTIONS
+========================= */
+
+.character.disgusted {
+    animation:
+        disgustedReaction 0.5s ease;
+}
+
+@keyframes disgustedReaction {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform:
+            translateX(-6px)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateX(6px)
+            rotate(3deg);
+    }
+
+    75% {
+        transform:
+            translateX(-4px)
+            rotate(-2deg);
+    }
+
+    100% {
+        transform:
+            translateX(0);
+    }
+}
+
+
+.character.happy {
+    animation:
+        happyReaction 0.6s ease;
+}
+
+@keyframes happyReaction {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 750px) {
+
+    .login-page {
+        flex-direction: column;
+
+        gap: 10px;
+
+        padding: 30px 0;
+    }
+
+    .characters {
+        transform: scale(0.7);
+
+        margin-bottom: -60px;
+    }
+
+    .login-card {
+        width: 92%;
+
+        max-width: 380px;
+
+        padding: 35px;
+    }
+}
