@@ -448,9 +448,9 @@ function showFinalQuestion() {
 // SURVEY LOGIN
 // ========================================
 
-const SURVEY_USERNAME = "observer";
+const SURVEY_USERNAME = "test123";
 
-const SURVEY_PASSWORD = "0427";
+const SURVEY_PASSWORD = "test123";
 
 
 surveyLoginButton.addEventListener(
