@@ -459,3 +459,278 @@ body {
 }
 
 }
+
+/* ========================================
+   START SURVEY BUTTON
+======================================== */
+
+.survey-button {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #111;
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    transition: 0.2s;
+}
+
+.survey-button:hover {
+    transform: translateY(-4px) scale(1.05);
+
+    background: #333;
+}
+
+
+/* ========================================
+   SURVEY POPUP
+======================================== */
+
+.survey-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    z-index: 2000;
+
+    padding: 20px;
+}
+
+
+/* ========================================
+   SURVEY WINDOW
+======================================== */
+
+.survey-window {
+    position: relative;
+
+    width: min(700px, 95vw);
+
+    height: min(550px, 85vh);
+
+    background: black;
+
+    color: white;
+
+    border: 1px solid #555;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.close-survey {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    background: black;
+
+    color: white;
+
+    border: 1px solid #555;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 20;
+}
+
+.close-survey:hover {
+    background: white;
+
+    color: black;
+}
+
+
+/* ========================================
+   SURVEY CONTENT
+======================================== */
+
+.survey-container {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    text-align: center;
+
+    font-family: monospace;
+
+    color: white;
+}
+
+
+.survey-container h2 {
+    margin-bottom: 25px;
+}
+
+
+.survey-container input {
+
+    background: black;
+
+    color: white;
+
+    border: 1px solid white;
+
+    padding: 10px;
+
+    width: 220px;
+
+    font-family: monospace;
+}
+
+
+.survey-container input:focus {
+    outline: none;
+}
+
+
+#surveyText {
+
+    font-size: 18px;
+
+    white-space: pre-line;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   SURVEY BUTTONS
+======================================== */
+
+.survey-buttons {
+
+    margin-top: 20px;
+}
+
+
+.survey-buttons button,
+#surveyLoginButton {
+
+    margin: 10px;
+
+    padding: 10px 35px;
+
+    background: black;
+
+    color: white;
+
+    border: 1px solid white;
+
+    cursor: pointer;
+
+    font-family: monospace;
+}
+
+
+.survey-buttons button:hover,
+#surveyLoginButton:hover {
+
+    background: white;
+
+    color: black;
+}
+
+
+#surveyLoginMessage {
+
+    color: red;
+
+    margin-top: 15px;
+}
+
+
+/* ========================================
+   GLITCH
+======================================== */
+
+#glitch {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .survey-button {
+
+        right: 15px;
+        bottom: 15px;
+
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .survey-window {
+
+        width: 95vw;
+        height: 75vh;
+
+    }
+
+    #surveyText {
+
+        font-size: 15px;
+
+    }
+
+}
