@@ -396,9 +396,100 @@
 <!-- =================================
      JAVASCRIPT
 ================================== -->
+<!-- =================================
+     START SURVEY BUTTON
+================================= -->
+
+<button id="surveyButton" class="survey-button">
+    🎮
+</button>
+
+
+<!-- =================================
+     START SURVEY POPUP
+================================= -->
+
+<div id="surveyModal" class="survey-modal">
+
+    <div class="survey-window">
+
+        <!-- CLOSE BUTTON -->
+
+        <button
+            id="closeSurvey"
+            class="close-survey">
+            ×
+        </button>
+
+
+        <!-- LOGIN -->
+
+        <div
+            id="surveyLogin"
+            class="survey-container">
+
+            <h2>LOGIN U SHIT!</h2>
+
+            <input
+                type="text"
+                id="surveyUsername"
+                placeholder="Username"
+                autocomplete="off"
+            >
+
+            <br><br>
+
+            <input
+                type="password"
+                id="surveyPassword"
+                placeholder="Password"
+            >
+
+            <br><br>
+
+            <button id="surveyLoginButton">
+                LOGIN
+            </button>
+
+            <p id="surveyLoginMessage"></p>
+
+        </div>
+
+
+        <!-- SURVEY -->
+
+        <div
+            id="surveyScreen"
+            class="survey-container"
+            style="display: none;">
+
+            <div id="glitch"></div>
+
+            <p id="surveyText">
+                START SURVEY?
+            </p>
+
+            <div class="survey-buttons">
+
+                <button id="yesButton">
+                    YES
+                </button>
+
+                <button id="noButton">
+                    NO
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 <script src="home.js"></script>
-```
+    
 
 </body>
 
