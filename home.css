@@ -728,6 +728,12 @@ body {
 
     #surveyText {
 
+      .wip {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 2px;
+}
         font-size: 15px;
 
     }
